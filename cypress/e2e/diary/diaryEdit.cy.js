@@ -30,7 +30,7 @@ describe('Diary Edit Test', () => {
         cy.wait(1500);
     });
 
-    it('Modify Diary', function() {
+    it('Modify & Delete Diary', function() {
         
         // 일기 수정        
         cy.get('.diaryMenuButton', { timeout: 30000 }).click();
@@ -50,10 +50,7 @@ describe('Diary Edit Test', () => {
         cy.get('[data-testid="closeSaveDiarySuccessModalButton"]', { timeout: 30000 }).click();
         cy.wait(1500);
 
-    });
-
-    it('Delete Diary', function() {
-
+        
         // 일기 삭제
         cy.get('.diaryMenuButton', { timeout: 30000 }).click();
         cy.wait(1000);
@@ -64,4 +61,17 @@ describe('Diary Edit Test', () => {
         cy.get('[data-testid="closeDiaryDeleteSuccessModalButton"]', { timeout: 30000 }).click();
         cy.wait(1500);
     });
+
+//     it('Delete Diary', function() {
+
+//         // 일기 삭제
+//         cy.get('.diaryMenuButton', { timeout: 30000 }).click();
+//         cy.wait(1000);
+//         cy.get('.diaryDeleteButton', { timeout: 30000 }).click();
+//         cy.wait(1000);
+//         cy.get('[data-testid="deleteDiaryButton"]', { timeout: 30000 }).click();
+//         cy.wait(1500);
+//         cy.get('[data-testid="closeDiaryDeleteSuccessModalButton"]', { timeout: 30000 }).click();
+//         cy.wait(1500);
+//     });
 })
