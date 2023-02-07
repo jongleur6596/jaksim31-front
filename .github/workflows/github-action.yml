@@ -17,6 +17,12 @@ jobs:
         with:
           persist-credentials: false
       
+      # Minify js/css files
+      - name: Auto Minify
+        uses: nizarmah/auto-minify@v2.1
+        with:
+          overwrite: true
+      
       - name: Create env local file
         run: echo "${{ secrets.ENV_LOCAL_FILE }}" > .env.local
           
